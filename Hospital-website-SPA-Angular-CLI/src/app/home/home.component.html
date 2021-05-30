@@ -1,0 +1,97 @@
+<div class="row">
+    <div class="col-md-8 col-12">
+        <ngb-carousel *ngIf="images" >
+            <ng-template ngbSlide>
+              <div class="picsum-img-wrapper">
+                <img [src]="images[0]" alt="Random first slide" style="background-size:cover;width: 230vh; height: 68vh;">
+              </div>
+              <div class="carousel-caption">
+                <h3>10 seconds between slides...</h3>
+                <p>This carousel uses customized default values.</p>
+              </div>
+            </ng-template>
+            <ng-template ngbSlide>
+              <div class="picsum-img-wrapper">
+                <img [src]="images[1]" alt="Random second slide" style="background-size:cover;width: 230vh; height: 68vh;">
+              </div>
+              <div class="carousel-caption">
+                <h3>No mouse events...</h3>
+                <p>This carousel doesn't pause or resume on mouse events</p>
+              </div>
+            </ng-template>
+            <ng-template ngbSlide>
+              <div class="picsum-img-wrapper">
+                <img [src]="images[2]"  alt="Random third slide" style="background-size:cover;width: 230vh; height: 68vh;">
+              </div>
+              <div class="carousel-caption">
+                <h3>No keyboard...</h3>
+                <p>This carousel uses customized default values.</p>
+              </div>
+            </ng-template>
+            <ng-template ngbSlide>
+              <div class="picsum-img-wrapper">
+                <img [src]="images[3]" alt="Random fourth slide" style="background-size:cover;width: 230vh; height: 68vh;">
+              </div>
+              <div class="carousel-caption">
+                <h3>And no wrap after last slide.</h3>
+                <p>This carousel uses customized default values.</p>
+              </div>
+            </ng-template>
+          </ngb-carousel>
+    </div>
+    <div class="col-md-4 col-12 ">
+        <ng-template #content let-modal>
+            <div class="modal-header" style="background-color:  #36e0b9;">
+              <h4 class="modal-title" id="modal-basic-title" >Get an Appointment</h4>
+              <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <form>
+                <div class="form-group">
+                    <label for="Name">Name</label>
+                    <div class="input-group">
+                      <input id="name" class="form-control" placeholder="xyz.." name="dp" ngbDatepicker #dp="ngbDatepicker">
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label for="Contactno">Contact No</label>
+                    <div class="input-group">
+                      <input id="contact" class="form-control" placeholder="9423892802" name="dp" ngbDatepicker #dp="ngbDatepicker">
+                    </div>
+                  </div>
+                <div class="form-group">
+                  <label for="dateOfBirth">Date of birth</label>
+                  <div class="input-group">
+                    <input id="dateOfBirth" class="form-control" placeholder="yyyy-mm-dd" name="dp" ngbDatepicker #dp="ngbDatepicker">
+                    <div class="input-group-append">
+                      <button class="btn btn-outline-secondary calendar" (click)="dp.toggle()" type="button"></button>
+                    </div>
+                  </div>
+                </div>
+                <div class="form-group">
+                    <label for="Name">Address</label>
+                    <div class="input-group">
+                      <input id="address" class="form-control" placeholder="xyzfdf.." name="dp" ngbDatepicker #dp="ngbDatepicker">
+                    </div>
+                  </div>
+              </form>
+            </div>
+            <div class="modal-footer" style="background-color:  #36e0b9;">
+              <button type="button" class="btn btn-outline-dark" (click)="modal.close('Save click')">Submit</button>
+            </div>
+        </ng-template>
+          <div class="text-center" style="padding-top: 70px;" >
+            <button class="btn btn-lg btn-outline-dark" (click)="open('content')" style="background-color: rgb(236, 106, 19);">Get an Appointment</button>
+          </div>
+          <div class="text-center ">
+            <img src="./assets/doctor.svg" class="shadow-lg p-3 mb-5 bg-white rounded" alt="doctor" style="width: 300px;height: 300px;">
+          </div>
+         
+         
+    </div>
+</div>
+
+
+  

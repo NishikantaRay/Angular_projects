@@ -1,0 +1,93 @@
+<div class="row">
+  <div class="col-sm-8 offset-sm-2 text">
+      <h1>WeJustDevelop</h1>
+      <div class="description">
+          <p>
+              Create a good career with us!
+          </p>
+      </div>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-sm-10 offset-sm-1 show-forms">
+      <span class="show-register-form active">Signin</span>
+  </div>
+</div>
+
+<div class="row register-form">
+  <div class="col-sm-4 offset-sm-1">
+      <form role="form" action="" method="post" class="r-form">
+          <div class="form-group">
+            <label class="sr-only" for="l-form-email">Email</label>
+            <input type="text" name="l-form-email" placeholder="Email..." class="l-form-email form-control" id="l-form-email" [(ngModel)]="email">
+        </div>
+        <div class="form-group">
+            <label class="sr-only" for="l-form-password">Password</label>
+            <input type="password" name="l-form-password" placeholder="Password..." class="l-form-password form-control" id="l-form-password">
+        </div>
+        <button type="submit" class="btn">Sign in!</button>
+      </form>
+      <div class="social-login">
+        <p>Or login with:</p>
+        <div class="social-login-buttons">
+            <a class="btn btn-link-1" (click)="login()"><i class="fa fa-facebook"></i></a>
+            <a class="btn btn-link-1" (click)="getHomeTimeline()"><i class="fa fa-twitter"></i></a>
+            <a class="btn btn-link-1" href="#"><i class="fa fa-google-plus"></i></a>
+        </div>
+
+
+          <div id="status">
+          </div>
+    </div>
+  </div>
+  <div class="col-sm-6 forms-right-icons">
+
+    <div class="fb-page" 
+        data-href="https://www.facebook.com/wejustdevelop/" 
+        data-small-header="false" 
+        data-adapt-container-width="true" 
+        data-hide-cover="false" 
+        data-show-facepile="true">
+        <blockquote cite="https://www.facebook.com/wejustdevelop/" class="fb-xfbml-parse-ignore">
+            <a href="https://www.facebook.com/wejustdevelop/">Wejustdevelop</a>
+        </blockquote>
+    </div>
+        
+    <div class="posts-holder"
+        infinite-scroll
+        [infiniteScrollDistance]="1"
+        [infiniteScrollThrottle]="10"
+        [scrollWindow]="false"
+        (scrolled)="postsScrollDown()"
+        >
+
+                <a [href]="post.permalink_url" target="_blank" *ngFor="let post of pagePosts">
+                    <div class="row">
+                        <div class="col-sm-3">
+                            <img [src]="post.full_picture" *ngIf="post.full_picture">
+                            <img src="/assets/img/wjd_logo.jpg" *ngIf="!post.full_picture">
+                        </div>
+                        <div class="col-sm-8">
+                            <h3>{{post.message}}</h3>
+                        </div>
+                    </div>
+                </a>
+    </div>
+    <!--
+      <div class="row">
+          <div class="col-sm-2 icon"><i class="fa fa-commenting"></i></div>
+          <div class="col-sm-10">
+              <h3>Awesome Login</h3>
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et.</p>
+          </div>
+      </div>
+      <div class="row">
+          <div class="col-sm-2 icon"><i class="fa fa-magic"></i></div>
+          <div class="col-sm-10">
+              <h3>Great Registration</h3>
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et.</p>
+          </div>          
+      </div>-->
+  </div>
+</div>
